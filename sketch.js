@@ -14,6 +14,7 @@ var bottom;
 var left;
 var right;
 
+
 function preload() {
 
 }
@@ -57,11 +58,13 @@ function draw() {
 }
 
 function keyPressed() {
-  if (keyCode === UP_ARROW) {
-    force();
+  if (keyCode == UP_ARROW) {
+    ball.aForce();
   }
 }
 
-function force() {
-  Body.applyForce(ball, {x: ball.position.x - 10, y: ball.position.y}, {x: 0.05, y: -0.01});
-}
+/*function hForce() {
+  //Body.applyForce(ball.Body, {x: ball.Body.x - 10, y: ball.Body.y}, {x: 0.05, y: -0.01});
+	//Body.applyForce(ball.Body, {x: 0, y: 0}, {x: 0.05, y: -0.01});
+	Matter.Body.applyForce(ball.body, ball.body.position, {x: 0.05, y: -0.01});
+} */

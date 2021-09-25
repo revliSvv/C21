@@ -7,9 +7,7 @@ class Ball {
 
     var options = {
       isStatic: false,
-      restitution: 0.3,
-      friction: 0,
-      density: 1.2
+      restitution: 0.3
     }
 
     this.body = Bodies.circle(this.x, this.y, this.radius, options);
@@ -26,5 +24,11 @@ class Ball {
     fill(0);
     ellipse(pos.x, pos.y, this.radius);
     pop();
+  }
+
+  aForce() {
+    var pos = this.body.position;
+
+    Matter.Body.applyForce(this.body, pos, {x: 0.3, y: -0.25});
   }
 }
